@@ -1,0 +1,23 @@
+{
+  "manifest_version": 2,
+
+  "name": "azbid",
+  "description": "This extension modifies the azbidder website to allow blacklisting of auction properties.",
+  "version": "1.0.3",
+
+  "permissions": [
+    "http://www.azbidder.com/",
+	"tabs"
+  ],
+  "content_scripts": [
+    {
+	  "matches": ["http://www.azbidder.com/*","https://www.azbidder.com/*","http://azbidder.com/*","https://azbidder.com/*"],
+	  "js": ["jquery-2.1.1.min.js","main.js"],
+	  "run_at": "document_start",
+	  "all_frames": true
+	}
+  ], 
+  "browser_action": {
+    "default_icon": "icon.png"
+  }
+}
